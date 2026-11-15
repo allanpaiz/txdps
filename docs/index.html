@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DPS-THP Traffic Stops, March 2018</title>
+  <meta name="description" content="Interactive county map of Texas Highway Patrol traffic stops in March 2018: counts, trends, comparisons, outcomes, traffic-adjusted measures.">
+  <link rel="icon" type="image/png" href="assets/TX_-_DPS_Seal-background.png">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <div class="brand">
+      <img src="assets/TX_-_DPS_Seal-background.png" alt="" width="40" height="40">
+      <div>
+        <h1>DPS-THP Traffic Stops, March 2018</h1>
+        <p class="note">Independent analysis of public data &middot; not an official Texas DPS product</p>
+      </div>
+    </div>
+    <nav class="tabs" role="tablist" aria-label="Views">
+      <button type="button" role="tab" id="tab-map" aria-controls="view-map" data-tab="map">Map</button>
+      <button type="button" role="tab" id="tab-table" aria-controls="view-table" data-tab="table">All counties</button>
+      <a class="tab-link" href="report.pdf" target="_blank" rel="noopener">Report (PDF)</a>
+    </nav>
+  </div>
+</header>
+
+<section class="wrap stats" aria-label="Headline figures" id="stats"></section>
+
+<main class="wrap">
+  <section id="view-map" role="tabpanel" aria-labelledby="tab-map" class="view map-layout">
+    <div class="map-col">
+      <div class="toolbar">
+        <label class="field grow">
+          <span class="field-label">County</span>
+          <input id="county-search" list="county-list" placeholder="Find a county&hellip;" autocomplete="off">
+          <datalist id="county-list"></datalist>
+        </label>
+        <label class="check"><input type="checkbox" id="toggle-ih" checked> Interstates</label>
+        <div class="zoom" role="group" aria-label="Zoom">
+          <button type="button" id="zoom-in" aria-label="Zoom in">+</button>
+          <button type="button" id="zoom-out" aria-label="Zoom out">&minus;</button>
+          <button type="button" id="zoom-reset" aria-label="Reset zoom">&#8634;</button>
+        </div>
+      </div>
+      <div class="map-body">
+        <div class="measures" role="group" aria-labelledby="measure-label">
+          <span class="field-label" id="measure-label">Measure</span>
+          <div id="metric-buttons"></div>
+        </div>
+        <div class="map-content">
+          <div class="map-wrap"><svg id="map" role="img" aria-label="Map of Texas counties"></svg></div>
+          <div class="legend" id="legend" aria-label="Map legend"></div>
+          <p class="desc" id="metric-desc"></p>
+        </div>
+      </div>
+    </div>
+    <aside class="panel" id="panel" aria-live="polite"></aside>
+  </section>
+
+  <section id="view-table" role="tabpanel" aria-labelledby="tab-table" class="view" hidden>
+    <div class="table-head">
+      <p class="sub"><strong>Click a column</strong> to sort or <strong>click a row</strong> to open the county on the map.</p>
+      <div class="table-tools">
+        <input id="table-filter" placeholder="Filter by county or region&hellip;" autocomplete="off" aria-label="Filter counties">
+        <button type="button" id="download-csv" class="button">Download CSV</button>
+      </div>
+    </div>
+    <div class="table-scroll"><table id="county-table"></table></div>
+    <p class="sub" id="table-key"></p>
+  </section>
+</main>
+
+<footer class="wrap footer">
+  <p><strong>Sources:</strong> <span id="sources"></span></p>
+  <p>Method and limitations: <a href="report.pdf">report</a>. Data generated <span id="generated"></span>.</p>
+</footer>
+
+<div id="tooltip" class="tooltip" role="tooltip" hidden></div>
+
+<script src="assets/d3.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
