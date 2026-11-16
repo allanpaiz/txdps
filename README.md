@@ -31,7 +31,7 @@ The five stages prepare county references, build the DuckDB database, calculate 
 ### Slide Show
 [Slide Show (GD)](https://docs.google.com/presentation/d/16ZLiXa1FnvP99rJ0e9wGIXU3CgaOxKy3iKByXu5fjOY/edit?usp=sharing)
 
-[Slide Show (PDF)](assessment_slide_show.pdf)
+[Slide Show (PDF)](https://github.com/allanpaiz/txdps/blob/main/assesment_slide_show.pdf)
 
 ## Note
 
