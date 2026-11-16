@@ -28,8 +28,11 @@ python -m venv .venv
 
 The five stages prepare county references, build the DuckDB database, calculate county measures, draw figures and generate tables. Results go to `outputs/`, `docs/data/` and `report/`.
 
+### Slide Show
 [Slide Show (GD)](https://docs.google.com/presentation/d/16ZLiXa1FnvP99rJ0e9wGIXU3CgaOxKy3iKByXu5fjOY/edit?usp=sharing)
+
 [Slide Show (PDF)](assessment_slide_show.pdf)
+
 ## Note
 
 This is an independent analysis of public data. Not an official Texas DPS Report.
